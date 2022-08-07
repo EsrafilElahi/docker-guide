@@ -1,0 +1,29 @@
+docker ps --> show all dockers
+docker ps -a --> show all dockers run and exited container
+docker ps -q --> just show container-id
+docker ps -aq --> all containers with exited containers too
+docker pull node --> pull node image
+docker run -it -d docker-image --> run docker image and create docker container
+docker run -d nginx --> docker run with dedicated : keep running with close terminal
+docker exec -it container-id bash --> run that container-image with intractive terminal into bash
+docker stop/start --> stop / start container
+docker stop $(docker ps -q) --> stop all docker with container-id
+docker start $(docker ps -aq) --> start all docker (run and exited) with container-id
+docker rm $(docker ps -aq) --> remove all containers (run and exited) with container-id
+docker kill container-id --> kill that container
+docker images --> list of docker images
+docker rm container-id || docker rm container-name --> remove that container
+docker rmi container-id || docker rmi container-name --> remove that image
+docker run -p 80:80 || 8000:80 --> port 80 from nginx for example
+docker run -d -p 8000:80 -v project-path:ro nginx-container --> read project with in local with nginx and :ro (readonly)
+docker run --name folan-name --> change container name
+docker build docker-file-path --> build docker image
+docker save -o path-to-save/nginx.tar nginx-container --> save nginx container into other path
+docker load -i path-saved-container/nginx.tar --> load that sved container with -i input
+docker run -d -p 80:80 --name webserver nginx:alpine --> with specific name dedicated port and tag
+
+
+docker-compose up
+docker-compose up -d
+docker-compose down
+docker-compose up --build

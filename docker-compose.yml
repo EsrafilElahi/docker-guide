@@ -1,0 +1,38 @@
+# for run docker image and create docker container
+
+version: '3.9'
+services:
+  # image web 
+  web:
+    build: .
+    command: npm run dev
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres # this name should be docker image postgress
+    environment:
+      DATABASE_URL: postgres://todoapp@postgres/todos
+
+  # image postgres
+  postgres:
+    image: postgres:9.6.2-alpine
+    environment:
+      POSTGRES_USER: todoapp
+      POSTGRES_DB: todos
+
+# command: npm run dev - Once the image is built, and the container is running, the npm run dev command will start the application.
+
+# volumes: - This section will mount paths between the host and the container.
+
+# .:/usr/app/ - This will mount the root directory to our working directory in the container.
+
+# /usr/app/node_modules - This will mount the node_modules directory to the host machine using the buildtime directory.
+
+# environment: - The application itself expects the environment variable DATABASE_URL to run. This is set in db.js.
+
+# ports: - This will publish the container's port, in this case 3000, to the host as port 3000.
+
+
