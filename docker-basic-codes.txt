@@ -4,7 +4,7 @@ docker ps -q --> just show container-id
 docker ps -aq --> all containers with exited containers too
 docker pull node --> pull node image
 docker run -it -d docker-image --> run docker image and create docker container
-docker run -d nginx --> docker run with dedicated : keep running with close terminal
+docker run -d nginx --> docker run with de-atach : keep running with close terminal
 docker exec -it container-id bash --> run that container-image with intractive terminal into bash
 docker stop/start --> stop / start container
 docker stop $(docker ps -q) --> stop all docker with container-id
