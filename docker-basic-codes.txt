@@ -17,7 +17,7 @@ docker rmi container-id || docker rmi container-name --> remove that image
 docker run -p 80:80 || 8000:80 --> port 80 from nginx for example
 docker run -d -p 8000:80 -v project-path:ro nginx-container --> read project with in local with nginx and :ro (readonly)
 docker run --name folan-name --> change container name
-docker build docker-file-path --> build docker image
+docker build docker-file-path --> build docker image from docker file
 docker save -o path-to-save/nginx.tar nginx-container --> save nginx container into other path
 docker load -i path-saved-container/nginx.tar --> load that sved container with -i input
 docker run -d -p 80:80 --name webserver nginx:alpine --> with specific name dedicated port and tag
