@@ -33,5 +33,5 @@ services:
 
 # environment: - The application itself expects the environment variable DATABASE_URL to run. This is set in db.js.
 
-# ports: - This will publish the container's port, in this case 3000, to the host as port 3000.
+# ports: - This will publish the container's port, in this case 3000, to the host as port 3000
 
