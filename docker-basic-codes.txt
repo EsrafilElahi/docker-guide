@@ -24,8 +24,11 @@ docker run -d -p 80:80 --name webserver nginx:alpine --> with specific name dedi
 
 kill -9 $(lsof -ti:3000) --> find 3000 ports runned and kill them with PID (process_id)
 
-docker-compose up
-docker-compose up -d
-docker-compose down
-docker-compose up --build
+docker compose up
+docker compose --filed docker-compose-dev.yml up -d
+docker compose up -d
+docker compose down
+docker compose --filed docker-compose-dev.yml down
+docker compose up --build
+docker compose --filed docker-compose-dev.yml up --build
 
