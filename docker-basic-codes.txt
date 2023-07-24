@@ -22,6 +22,8 @@ docker save -o path-to-save/nginx.tar nginx-container --> save nginx container i
 docker load -i path-saved-container/nginx.tar --> load that sved container with -i input
 docker run -d -p 80:80 --name webserver nginx:alpine --> with specific name dedicated port and tag
 
+docker images remove none tag --> docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
+
 kill -9 $(lsof -ti:3000) --> find 3000 ports runned and kill them with PID (process_id)
 
 docker compose up
